@@ -10,9 +10,9 @@ const CollegeCard = ({ college }) => {
     sports,
   } = college;
   return (
-    <div className="card card-compact w-96 bg-base-100 shadow-xl">
+    <div className="card card-compact md:w-96 bg-base-100 shadow-xl">
       <figure>
-        <img src={college_image} alt="Shoes" />
+        <img src={college_image} alt={college_name} />
       </figure>
       <div className="card-body">
         <h2 className="card-title">{college_name}</h2>

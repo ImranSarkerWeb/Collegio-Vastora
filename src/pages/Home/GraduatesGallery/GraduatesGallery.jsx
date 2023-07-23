@@ -23,7 +23,11 @@ const GraduatesGallery = () => {
       </h1>
       <div className="grid grid-cols-3 lg:grid-cols-5">
         {imageLink.map((img, idx) => (
-          <img width="350px" height="250px" key={idx} src={img} />
+          <img
+            className="w-32 h-20 md:w-96 md:h-48 hover:opacity-75"
+            key={idx}
+            src={img}
+          />
         ))}
       </div>
     </div>

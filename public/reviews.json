@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "review": "Amazing college! The professors are highly knowledgeable and supportive. The campus facilities are top-notch, and the admission process was smooth.",
+    "img": "https://randomuser.me/api/portraits/women/15.jpg",
+    "reviewer_name": "Anika Patel",
+    "ratings": 5
+  },
+  {
+    "id": 2,
+    "review": "I'm very satisfied with this college. The courses offered are comprehensive, and the faculty is excellent. The affordable tuition fees are a great value for the quality of education.",
+    "img": "https://randomuser.me/api/portraits/women/75.jpg",
+    "reviewer_name": "Jane Smith",
+    "ratings": 4
+  },
+  {
+    "id": 3,
+    "review": "I had some concerns during the admission process, but the college staff provided excellent support and guidance. The campus environment is conducive to learning, and I'm happy with my decision to join this college.",
+    "img": "https://randomuser.me/api/portraits/men/16.jpg",
+    "reviewer_name": "Michael Johnson",
+    "ratings": 3
+  },
+  {
+    "id": 4,
+    "review": "Good college with dedicated professors and a strong emphasis on research. However, I feel the college can improve its scholarship opportunities for deserving students.",
+    "img": "https://randomuser.me/api/portraits/women/14.jpg",
+    "reviewer_name": "Sarah Williams",
+    "ratings": 3
+  },
+  {
+    "id": 5,
+    "review": "Disappointed with the lack of transparency during the admission process. The college facilities are average, and more investment in modern infrastructure is needed.",
+    "img": "https://randomuser.me/api/portraits/women/5.jpg",
+    "reviewer_name": "David Lee",
+    "ratings": 2
+  },
+  {
+    "id": 6,
+    "review": "This college exceeded my expectations. The labs and research opportunities are fantastic, and the professors are approachable and supportive.",
+    "img": "https://randomuser.me/api/portraits/men/5.jpg",
+    "reviewer_name": "Emily Adams",
+    "ratings": 4
+  },
+  {
+    "id": 7,
+    "review": "I love the friendly atmosphere of this college. The campus is beautiful, and the admission team made the process stress-free.",
+    "img": "https://randomuser.me/api/portraits/women/25.jpg",
+    "reviewer_name": "Andrew Wilson",
+    "ratings": 4
+  },
+  {
+    "id": 8,
+    "review": "The college provides decent education, but the infrastructure could use some improvement. The admission process was straightforward, but financial aid options could be better.",
+    "img": "https://randomuser.me/api/portraits/women/51.jpg",
+    "reviewer_name": "Sophia Garcia",
+    "ratings": 2
+  },
+  {
+    "id": 9,
+    "review": "This college has been a great fit for my academic and personal growth. The professors are dedicated to helping students succeed, and the admission team provided valuable guidance.",
+    "img": "https://randomuser.me/api/portraits/women/56.jpg",
+    "reviewer_name": "Robert Brown",
+    "ratings": 4
+  },
+  {
+    "id": 10,
+    "review": "The college offers a good variety of courses, but the workload can be overwhelming. The admission process was smooth, but communication with students could be improved.",
+    "img": "https://randomuser.me/api/portraits/men/98.jpg",
+    "reviewer_name": "Olivia Miller",
+    "ratings": 3
+  }
+]

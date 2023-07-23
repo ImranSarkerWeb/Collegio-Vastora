@@ -1,3 +1,5 @@
+import { useState, useEffect } from "react";
+
 const NavBar = () => {
   const navContent = (
     <>
@@ -16,8 +18,27 @@ const NavBar = () => {
       </li>
     </>
   );
+
+  const [showShadow, setShowShadow] = useState(false);
+
+  const handleScroll = () => {
+    const scrollPosition = window.scrollY;
+    setShowShadow(scrollPosition > 0);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <div className="navbar bg-base-100">
+    <div
+      className={`navbar bg-base-100 ${
+        showShadow ? "shadow-md shadow-transition" : ""
+      } fixed z-10 npm top-0 left-0 w-full`}
+    >
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">

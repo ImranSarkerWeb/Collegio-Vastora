@@ -1,4 +1,11 @@
 /* eslint-disable react/prop-types */
+import {
+  FaCalendarAlt,
+  FaGraduationCap,
+  FaFutbol,
+  FaBookOpen,
+  FaChevronRight,
+} from "react-icons/fa";
 
 const CollegeCard = ({ college }) => {
   const {
@@ -9,67 +16,132 @@ const CollegeCard = ({ college }) => {
     research_history,
     sports,
   } = college;
+
   return (
-    <div className="card card-compact md:w-96 bg-base-100 shadow-xl">
+    <div className="card card-compact md:w-96 bg-base-100 shadow-lg rounded-xl overflow-hidden">
       <figure>
-        <img src={college_image} alt={college_name} />
+        <img
+          src={college_image}
+          alt={college_name}
+          className="w-full h-40 object-cover"
+        />
       </figure>
-      <div className="card-body">
-        <h2 className="card-title">{college_name}</h2>
-        <p>
+      <div className="card-body p-4">
+        <h2 className="card-title text-2xl font-semibold mb-2">
+          {college_name}
+        </h2>
+        <p className="text-gray-600 text-sm mb-2">
           Please note that these are fictional examples and the data is intended
           for illustrative purposes only. The actual information for each
           college would vary based on its unique attributes and offerings.
         </p>
-        <h2 className="text-md font-semibold"> Admission Dates:</h2>
-        <div className="flex justify-between">
-          <div>
-            <h3 className="badge badge-info">Fall</h3>
-            <p>Start Date: {admission_dates.fall.start_date}</p>
-            <p>End Date {admission_dates.fall.end_date}</p>
-          </div>
-          <div>
-            <h3 className="badge badge-info">Spring</h3>
-            <p>Start Date: {admission_dates.spring.start_date}</p>
-            <p>End Date: {admission_dates.spring.end_date}</p>
-          </div>
-        </div>
-
-        <h2 className="text-md font-semibold">Events:</h2>
-        <div className="grid grid-cols-2 gap-2">
-          {events.slice(0, 2).map((event, idx) => (
-            <div key={idx} className="border border-green-600 p-1">
-              <p>Name: {event.name}</p>
-              <p>Openings: {event.date}</p>
-              <p>Description: {event.description.slice(0, 20)}...</p>
+        <div className="mb-4">
+          <h2 className="text-lg font-semibold mb-4 flex items-center">
+            <FaCalendarAlt className="mr-2 text-blue-500 text-500" />
+            <span className="border-b-2 border-blue-500 pb-1">
+              Admission Dates
+            </span>
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="bg-gradient-to-r from-purple-200 to-purple-300 p-4 rounded-lg shadow-md">
+              <h3 className="text-lg font-semibold mb-2">Fall Semester</h3>
+              <div className="flex items-center mb-2">
+                <span className="text-blue-500 mr-1">
+                  <FaChevronRight />
+                </span>
+                <p className="text-gray-600 text-sm">
+                  Start: {admission_dates.fall.start_date}
+                </p>
+              </div>
+              <div className="flex items-center">
+                <span className="text-blue-500 mr-1">
+                  <FaChevronRight />
+                </span>
+                <p className="text-gray-600 text-sm">
+                  End: {admission_dates.fall.end_date}
+                </p>
+              </div>
             </div>
-          ))}
-        </div>
-
-        <div>
-          <h2 className="text-md font-semibold">Research History:</h2>
-          <h3>Total Publications: {research_history.total_publications}</h3>
-          <p>Major Breakthrougs:</p>
-          {research_history.major_breakthroughs.map((major, idx) => (
-            <li key={idx}>{major}</li>
-          ))}
-        </div>
-
-        <h2 className="text-md font-semibold">Sports</h2>
-        <div className="flex justify-around">
-          <div>
-            <h3>Teams:</h3>
-            {sports.teams.map((team, idx) => (
-              <li key={idx}>{team}</li>
-            ))}
-          </div>
-          <div>
-            <h3>Facilities:</h3>
-            {sports.facilities.map((fls, idx) => (
-              <li key={idx}>{fls}</li>
-            ))}
+            <div className="bg-gradient-to-r from-amber-200 to-amber-300 p-4 rounded-lg shadow-md">
+              <h3 className="text-lg font-semibold mb-2">Spring Semester</h3>
+              <div className="flex items-center mb-2">
+                <span className="text-blue-500 mr-1">
+                  <FaChevronRight />
+                </span>
+                <p className="text-gray-600 text-sm">
+                  Start: {admission_dates.spring.start_date}
+                </p>
+              </div>
+              <div className="flex items-center">
+                <span className="text-blue-500 mr-1">
+                  <FaChevronRight />
+                </span>
+                <p className="text-gray-600 text-sm">
+                  End: {admission_dates.spring.end_date}
+                </p>
+              </div>
+            </div>
           </div>
         </div>
+        <div className="mb-4">
+          <h2 className="text-md font-semibold mb-2 flex items-center">
+            <FaGraduationCap className="mr-2 text-green-500" />
+            Events:
+          </h2>
+          <div className="grid grid-cols-2 gap-2">
+            {events.slice(0, 2).map((event, idx) => (
+              <div key={idx} className="border border-green-600 p-2 rounded-lg">
+                <p className="font-semibold">{event.name}</p>
+                <p className="text-xs text-gray-600">Openings: {event.date}</p>
+                <p className="text-sm mt-2">
+                  {event.description.slice(0, 30)}...
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="mb-4">
+          <h2 className="text-md font-semibold mb-2 flex items-center">
+            <FaBookOpen className="mr-2 text-purple-500" />
+            Research History:
+          </h2>
+          <h3 className="mb-2">
+            Total Publications: {research_history.total_publications}
+          </h3>
+          <p>Major Breakthroughs:</p>
+          <ul className="list-disc pl-6">
+            {research_history.major_breakthroughs.map((major, idx) => (
+              <li key={idx}>{major}</li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="mb-4">
+          <h2 className="text-md font-semibold mb-2 flex items-center">
+            <FaFutbol className="mr-2 text-red-500" />
+            Sports
+          </h2>
+          <div className="flex justify-between">
+            <div>
+              <h3 className="font-semibold">Teams:</h3>
+              <ul className="list-disc pl-6">
+                {sports.teams.map((team, idx) => (
+                  <li key={idx}>{team}</li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-semibold">Facilities:</h3>
+              <ul className="list-disc pl-6">
+                {sports.facilities.map((fls, idx) => (
+                  <li key={idx}>{fls}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+
         <div className="card-actions justify-end">
           <button className="btn btn-xs">View Details</button>
         </div>

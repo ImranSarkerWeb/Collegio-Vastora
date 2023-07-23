@@ -23,13 +23,13 @@ const Reviews = () => {
             {panels.map((review, index) => (
               <div
                 key={index}
-                className="flicking-panel mx-2 max-w-xs md:max-w-lg p-6 border border-gray-300 rounded-lg shadow-md bg-gradient-to-r from-blue-50 to-white"
+                className="flicking-panel mx-2 max-w-xs md:max-w-xl p-6 border border-gray-300 rounded-lg shadow-md bg-gradient-to-r from-blue-50 to-white"
               >
                 <FaQuoteLeft className="text-2xl inline text-gray-400 mr-2" />
                 <p className="text-md md:text-lg inline text-center font-semibold mb-4">
                   {review.review}{" "}
                 </p>
-                <FaQuoteRight className="text-2xl inline  text-gray-400" />
+                <FaQuoteRight className="text-2xl inline  text-gray-400 ml-2" />
 
                 <div className="flex items-center mt-9 justify-center space-x-3">
                   <img

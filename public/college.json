@@ -119,7 +119,7 @@
       {
         "id": 3,
     "college_image": "https://www.slu.edu/_ldp-images/.private_ldp/a337/production/master/6fa3119e-b9a8-4c79-a4c6-6b549bfccc41.jpg",
-    "college_name": "Innovation Institute of Technology",
+    "college_name": "Harmony Arts Academy",
     "admission_dates": {
       "fall": {
         "start_date": "2023-09-10",
@@ -178,7 +178,7 @@
 ,     
 {"id": 4,
     "college_image": "https://www.timeshighereducation.com/student/sites/default/files/styles/default/public/james_madison_university.jpg?itok=rzNh-kr_",
-    "college_name": "Harmony Arts Academy",
+    "college_name": "Innovation Institute of Technology",
     "admission_dates": {
       "fall": {
         "start_date": "2023-08-20",

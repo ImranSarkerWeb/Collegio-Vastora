@@ -18,15 +18,15 @@ const Reviews = () => {
         <h2 className="text-center text-3xl font-semibold  mb-6">
           User Reviews
         </h2>
-        <div className="rounded-lg shadow-lg p-6 bg-white">
+        <div className="rounded-lg shadow-lg py-6 bg-white">
           <Flicking className="flicking" gap={20} auto={5000}>
             {panels.map((review, index) => (
               <div
                 key={index}
-                className="flicking-panel mx-2 max-w-lg p-6 border border-gray-300 rounded-lg shadow-md bg-gradient-to-r from-blue-50 to-white"
+                className="flicking-panel mx-2 max-w-xs md:max-w-lg p-6 border border-gray-300 rounded-lg shadow-md bg-gradient-to-r from-blue-50 to-white"
               >
                 <FaQuoteLeft className="text-2xl inline text-gray-400 mr-2" />
-                <p className="text-lg inline text-center font-semibold mb-4">
+                <p className="text-md md:text-lg inline text-center font-semibold mb-4">
                   {review.review}{" "}
                 </p>
                 <FaQuoteRight className="text-2xl inline  text-gray-400" />

@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@egjs/react-flicking": "^4.10.10",
+    "@lottiefiles/react-lottie-player": "^3.5.3",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.1",
     "react-icons": "^4.10.1",

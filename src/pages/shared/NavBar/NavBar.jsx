@@ -1,7 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../../providers/AuthProvider";
 
 const NavBar = () => {
+  const { user, logOut } = useContext(AuthContext);
+
   const navContent = (
     <>
       {" "}
@@ -73,13 +76,46 @@ const NavBar = () => {
         <ul className="menu menu-horizontal px-1">{navContent}</ul>
       </div>
 
-      <div className="form-control navbar-end">
+      <div className="form-control ml-12 md:ml-0 navbar-end">
         <input
           type="text"
           placeholder="Search"
           className="input input-bordered w-24 md:w-auto"
         />
       </div>
+
+      {user ? (
+        <div className="flex-none gap-2">
+          <div className="dropdown dropdown-end">
+            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+              <div title={user.displayName} className="w-10 rounded-full">
+                <img src={user.photoURL} />
+              </div>
+            </label>
+            <ul
+              tabIndex={0}
+              className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
+            >
+              <li>
+                <a className="justify-between">
+                  Profile
+                  <span className="badge">New</span>
+                </a>
+              </li>
+              <li>
+                <a>Settings</a>
+              </li>
+              <li>
+                <a onClick={logOut}>Logout</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      ) : (
+        <Link className="btn btn-md btn-accent md:mr-12" to="/login">
+          Login
+        </Link>
+      )}
     </div>
   );
 };

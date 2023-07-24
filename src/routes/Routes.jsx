@@ -31,12 +31,16 @@ const router = createBrowserRouter([
         element: <Register></Register>,
       },
       {
-        path: "/college-details",
+        path: "/college-details/:id",
         element: (
           <PrivateRoute>
             <Details></Details>
           </PrivateRoute>
         ),
+        loader: ({ params }) =>
+          fetch(
+            `https://collegio-vistora-server.vercel.app/colleges/${params.id}`
+          ),
       },
     ],
   },

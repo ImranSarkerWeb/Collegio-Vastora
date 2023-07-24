@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 
 const CollegeCard = ({ college }) => {
   const {
+    _id,
     college_name,
     college_image,
     admission_dates,
@@ -144,7 +145,7 @@ const CollegeCard = ({ college }) => {
         </div>
 
         <div className="card-actions justify-end">
-          <Link to="/college-details" className="btn btn-xs">
+          <Link to={`/college-details/${_id}`} className="btn btn-xs">
             View Details
           </Link>
         </div>

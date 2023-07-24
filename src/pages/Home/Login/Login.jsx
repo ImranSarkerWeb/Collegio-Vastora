@@ -3,44 +3,44 @@ import React, { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import { FaGoogle } from "react-icons/fa";
-// import { AuthContext } from "../../../providers/AuthProvider";
+import { AuthContext } from "../../../providers/AuthProvider";
 
 const Login = () => {
-  // const { signIn, googleSignIn } = useContext(AuthContext);
+  const { signIn, googleSignIn } = useContext(AuthContext);
   const [error, setError] = useState("");
   const navigate = useNavigate();
   const location = useLocation();
   const from = location?.state?.from?.pathname || "/";
 
-  // const handleSignIn = (e) => {
-  //   e.preventDefault();
-  //   const email = e.target.email.value;
-  //   const password = e.target.password.value;
-  //   setError("");
-  //   signIn(email, password)
-  //     .then((result) => {
-  //       const loggedUser = result.user;
-  //       navigate(from, { replace: true });
-  //     })
-  //     .catch((error) => {
-  //       console.log(error.message);
-  //       setError(error.message);
-  //     });
-  // };
-  // const handleGoogleLogin = async () => {
-  //   try {
-  //     const result = await googleSignIn();
-  //     const gmailUser = result.user;
-  //     console.log("user created using gmail", gmailUser);
-  //     navigate(from, { replace: true });
-  //   } catch (error) {
-  //     console.log(error.message);
-  //   }
-  // };
+  const handleSignIn = (e) => {
+    e.preventDefault();
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    setError("");
+    signIn(email, password)
+      .then((result) => {
+        const loggedUser = result.user;
+        navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        console.log(error.message);
+        setError(error.message);
+      });
+  };
+  const handleGoogleLogin = async () => {
+    try {
+      const result = await googleSignIn();
+      const gmailUser = result.user;
+      console.log("user created using gmail", gmailUser);
+      navigate(from, { replace: true });
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
   return (
-    <div className="text-center my-8">
+    <div className="text-center mt-28 mb-10">
       <h2 className="text-4xl my-8">Please Login!</h2>
-      <form>
+      <form onSubmit={handleSignIn}>
         <div>
           <input
             autoComplete="username"
@@ -74,7 +74,10 @@ const Login = () => {
       </p>
       <div className="divider w-full max-w-xs mx-auto my-8">OR</div>
       <div>
-        <button className="btn btn-outline btn-accent mb-4  w-full max-w-xs">
+        <button
+          onClick={handleGoogleLogin}
+          className="btn btn-outline btn-accent mb-4  w-full max-w-xs"
+        >
           <FaGoogle className="me-2 text-amber-400" /> Login With Google
         </button>{" "}
       </div>

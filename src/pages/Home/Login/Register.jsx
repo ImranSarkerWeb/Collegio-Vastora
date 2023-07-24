@@ -2,67 +2,67 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { FaGoogle } from "react-icons/fa";
-// import { AuthContext } from "../../../providers/AuthProvider";
-// import { updateProfile } from "firebase/auth";
+import { AuthContext } from "../../../providers/AuthProvider";
+import { updateProfile } from "firebase/auth";
 
 const Register = () => {
-  // const { createUser, googleSignIn } = useContext(AuthContext);
+  const { createUser, googleSignIn } = useContext(AuthContext);
   const [success, setSuccess] = useState("");
   const [error, setError] = useState("");
 
-  // const handleRegister = (e) => {
-  //   e.preventDefault();
-  //   const form = e.target;
-  //   const name = form.name.value;
-  //   const email = form.email.value;
-  //   const photo = form.photo.value;
-  //   const password = form.password.value;
-  //   setSuccess("");
-  //   setError("");
-  //   if (password.length < 6) {
-  //     setError("You password at least 6 character long.");
-  //     return;
-  //   }
-  //   createUser(email, password)
-  //     .then((result) => {
-  //       const createdUser = result.user;
-  //       setSuccess("User has been created successfully.");
+  const handleRegister = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const photo = form.photo.value;
+    const password = form.password.value;
+    setSuccess("");
+    setError("");
+    if (password.length < 6) {
+      setError("You password at least 6 character long.");
+      return;
+    }
+    createUser(email, password)
+      .then((result) => {
+        const createdUser = result.user;
+        setSuccess("User has been created successfully.");
 
-  //       updateUserProfile(result.user, name, photo)
-  //         .then(() => {
-  //           console.log("user profile updated");
-  //         })
-  //         .catch((error) => {
-  //           console.log(error.message);
-  //         });
+        updateUserProfile(result.user, name, photo)
+          .then(() => {
+            console.log("user profile updated");
+          })
+          .catch((error) => {
+            console.log(error.message);
+          });
 
-  //       form.reset();
-  //     })
-  //     .catch((error) => {
-  //       console.error(error.message);
-  //       setError(error.message);
-  //     });
-  // };
-  // const updateUserProfile = (user, name, photo) => {
-  //   return updateProfile(user, {
-  //     displayName: name,
-  //     photoURL: photo,
-  //   });
-  // };
+        form.reset();
+      })
+      .catch((error) => {
+        console.error(error.message);
+        setError(error.message);
+      });
+  };
+  const updateUserProfile = (user, name, photo) => {
+    return updateProfile(user, {
+      displayName: name,
+      photoURL: photo,
+    });
+  };
 
-  // const handleGoogleLogin = async () => {
-  //   try {
-  //     const result = await googleSignIn();
-  //     const gmailUser = result.user;
-  //     console.log("user created using gmail", gmailUser);
-  //   } catch (error) {
-  //     console.log(error.message);
-  //   }
-  // };
+  const handleGoogleLogin = async () => {
+    try {
+      const result = await googleSignIn();
+      const gmailUser = result.user;
+      console.log("user created using gmail", gmailUser);
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
   return (
-    <div className="text-center my-8">
+    <div className="text-center mb-10 mt-28">
       <h2 className="text-4xl my-8">Please Register!</h2>
-      <form>
+      <form onSubmit={handleRegister}>
         <div>
           <input
             type="text"
@@ -115,7 +115,10 @@ const Register = () => {
       </p>
       <div className="divider w-full max-w-xs mx-auto my-8">OR</div>
       <div>
-        <button className="btn btn-outline btn-accent mb-4 w-full max-w-xs ">
+        <button
+          onClick={handleGoogleLogin}
+          className="btn btn-outline btn-accent mb-4 w-full max-w-xs "
+        >
           <FaGoogle className="me-2 text-amber-400" />
           Sign Up With Google
         </button>{" "}

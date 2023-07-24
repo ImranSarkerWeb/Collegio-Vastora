@@ -6,6 +6,7 @@ import {
   FaBookOpen,
   FaChevronRight,
 } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const CollegeCard = ({ college }) => {
   const {
@@ -18,7 +19,7 @@ const CollegeCard = ({ college }) => {
   } = college;
 
   return (
-    <div className="card card-compact md:w-96 bg-base-100 shadow-lg rounded-xl overflow-hidden mb-10">
+    <div className="card card-compact md:w-80 lg:w-96 bg-base-100 shadow-lg rounded-xl overflow-hidden mb-10">
       <figure>
         <img
           src={college_image}
@@ -143,7 +144,9 @@ const CollegeCard = ({ college }) => {
         </div>
 
         <div className="card-actions justify-end">
-          <button className="btn btn-xs">View Details</button>
+          <Link to="/college-details" className="btn btn-xs">
+            View Details
+          </Link>
         </div>
       </div>
     </div>

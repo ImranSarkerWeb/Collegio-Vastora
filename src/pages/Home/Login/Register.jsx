@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaGoogle } from "react-icons/fa";
 import { AuthContext } from "../../../providers/AuthProvider";
 import { updateProfile } from "firebase/auth";
@@ -9,6 +9,7 @@ const Register = () => {
   const { createUser, googleSignIn } = useContext(AuthContext);
   const [success, setSuccess] = useState("");
   const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -27,7 +28,7 @@ const Register = () => {
       .then((result) => {
         const createdUser = result.user;
         setSuccess("User has been created successfully.");
-
+        navigate("/");
         updateUserProfile(result.user, name, photo)
           .then(() => {
             console.log("user profile updated");

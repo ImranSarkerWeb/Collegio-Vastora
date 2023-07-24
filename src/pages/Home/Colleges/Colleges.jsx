@@ -14,14 +14,18 @@ const Colleges = () => {
   return (
     <section className="my-20">
       <div>
-        <h1 className="text-center text-7xl font-bold mb-10">
-          Our Top Colleges
-        </h1>
+        {location === "/" ? (
+          <h1 className="text-center text-7xl font-bold mb-10">
+            Our Top Colleges
+          </h1>
+        ) : (
+          <div className="mt-28"></div>
+        )}
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
         {colleges && location === "/"
           ? colleges
-              .slice(0, 3)
+              .slice(1, 4)
               .map((college) => (
                 <CollegeCard college={college} key={college._id}></CollegeCard>
               ))

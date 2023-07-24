@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const NavBar = () => {
   const navContent = (
@@ -65,7 +65,9 @@ const NavBar = () => {
             {navContent}
           </ul>
         </div>
-        <a className="btn btn-ghost normal-case text-xl">Collegio Vistora</a>
+        <Link to="/" className="btn btn-ghost normal-case text-xl">
+          Collegio Vistora
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{navContent}</ul>

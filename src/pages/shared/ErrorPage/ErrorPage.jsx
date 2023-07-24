@@ -11,7 +11,7 @@ const ErrorPage = () => {
         src="/animation_lkftjiff.json"
       ></Player>
       <div className="text-center">
-        <Link to="/" className="btn btn-success">
+        <Link to="/" className="btn btn-wide btn-success">
           Go Home
         </Link>
       </div>

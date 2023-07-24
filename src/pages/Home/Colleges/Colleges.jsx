@@ -5,7 +5,7 @@ const Colleges = () => {
   const [colleges, setColleges] = useState([]);
 
   useEffect(() => {
-    fetch("college.json")
+    fetch("https://collegio-vistora-server.vercel.app/colleges")
       .then((res) => res.json())
       .then((data) => setColleges(data));
   }, []);

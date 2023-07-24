@@ -1,14 +1,15 @@
 import { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
 
 const NavBar = () => {
   const navContent = (
     <>
       {" "}
       <li>
-        <a>Home</a>
+        <NavLink to="/">Home</NavLink>
       </li>
       <li>
-        <a>Colleges</a>
+        <NavLink to="/colleges">Colleges</NavLink>
       </li>
       <li>
         <a>Admission</a>

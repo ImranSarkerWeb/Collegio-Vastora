@@ -18,7 +18,7 @@ const CollegeCard = ({ college }) => {
   } = college;
 
   return (
-    <div className="card card-compact md:w-96 bg-base-100 shadow-lg rounded-xl overflow-hidden">
+    <div className="card card-compact md:w-96 bg-base-100 shadow-lg rounded-xl overflow-hidden mb-10">
       <figure>
         <img
           src={college_image}

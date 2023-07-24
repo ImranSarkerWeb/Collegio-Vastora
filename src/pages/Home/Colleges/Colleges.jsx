@@ -9,6 +9,8 @@ const Colleges = () => {
       .then((res) => res.json())
       .then((data) => setColleges(data));
   }, []);
+  const location = window.location.pathname;
+
   return (
     <section className="my-20">
       <div>
@@ -17,11 +19,14 @@ const Colleges = () => {
         </h1>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
-        {colleges &&
-          colleges
-            .slice(0, 3)
-            .map((college) => (
-              <CollegeCard college={college} key={college.id}></CollegeCard>
+        {colleges && location === "/"
+          ? colleges
+              .slice(0, 3)
+              .map((college) => (
+                <CollegeCard college={college} key={college._id}></CollegeCard>
+              ))
+          : colleges.map((college) => (
+              <CollegeCard college={college} key={college._id}></CollegeCard>
             ))}
       </div>
     </section>

@@ -2,7 +2,7 @@ import { Player } from "@lottiefiles/react-lottie-player";
 
 const Loader = () => {
   return (
-    <div className="text-center">
+    <div className="text-center mt-20">
       <Player
         className="w-60 "
         autoplay
